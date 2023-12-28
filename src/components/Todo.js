@@ -1,21 +1,11 @@
 import React, { useState } from 'react'
 
-export const Todo = ({task, deleteTodo}) => {
-
-    const [checked, setChecked] = useState(false);
-
-    const handleChange = () => {
-        setChecked(!checked);
-    };
-
+export const Todo = ({task, deleteTodo, handleChange}) => {
 
   return (
     <div className='Todo'>
-        <label>
-            <input type="checkbox" 
-                   checked={checked}
-                   onChange={handleChange}
-            />
+        <label onClick={() => handleChange(task.id)}>
+            <input type="checkbox"/>
                 {task.task}
         </label>
         <button className='DelBtn' onClick={() => deleteTodo(task.id)}>Delete</button>
