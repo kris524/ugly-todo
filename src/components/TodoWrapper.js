@@ -5,11 +5,7 @@ import { Todo } from './Todo'
 
 
 export const TodoWrapper = () => {
-    const [todos, setTodos] = useState(() =>  {
-        const localValue = localStorage.getItem("ITEMS")
-        if (localValue == null) return []
-        return JSON.parse(localValue)
-    })
+    const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("ITEMS")) || [])
     
     useEffect(() => {
         
