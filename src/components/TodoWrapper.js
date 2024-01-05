@@ -28,8 +28,8 @@ export const TodoWrapper = () => {
 
     console.log(todos)
   return (
-    <div className='TodoWrapper'>
-        <h1 className="text-3xl mb-4">Get things done</h1>
+    <div className=''>
+        <h1 className="text-3xl mb-4 mr-4">Get things done</h1>
         <TodoForm addTodo={addTodo}></TodoForm>
         {todos.length === 0 && "No Todos"}
         {
@@ -38,6 +38,6 @@ export const TodoWrapper = () => {
         ))
         
         }
-        </div>
+    </div>
   )
 }
